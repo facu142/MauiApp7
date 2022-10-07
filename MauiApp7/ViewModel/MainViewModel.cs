@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace MauiApp7.ViewModel;
 
-public partial class MainViewModel: ObservableObject
+public partial class MainViewModel : ObservableObject
 {
     public MainViewModel()
     {
-        Items = new ObservableCollection<string>(); 
+        Items = new ObservableCollection<string>();
     }
 
     [ObservableProperty]
@@ -32,12 +32,20 @@ public partial class MainViewModel: ObservableObject
         // Add our item
         Text = string.Empty;
     }
+
     [RelayCommand]
     void Delete(string s)
     {
-        if(Items.Contains(s)){
+        if (Items.Contains(s))
+        {
             Items.Remove(s);
         }
+    }
+
+    [RelayCommand] 
+    async Task Tap(string s)
+    {
+        await Shell.Current.GoToAsync( $"{nameof(DetailPage)}?Text={s}");
     }
 
 }
