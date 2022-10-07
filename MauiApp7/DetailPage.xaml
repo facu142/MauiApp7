@@ -5,15 +5,19 @@
              xmlns:viewmodel="clr-namespace:MauiApp7.ViewModel"
              x:DataType="viewmodel:DetailViewModel"
              Title="DetailPage">
-    
+
     <VerticalStackLayout Padding="20">
+        <Label Text="Bienvenido!"
+               VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            FontSize="24"/>
         <Label 
             Text="{Binding Text}"
             VerticalOptions="Center" 
             HorizontalOptions="Center" 
             FontSize="24"/>
 
-        <Button Text="Go back"
+        <Button Text="Volver"
                 Command="{Binding GoBackCommand}">
         </Button>
     </VerticalStackLayout>

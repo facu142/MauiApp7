@@ -18,45 +18,16 @@
                Source="dotnet_bot.png"
                BackgroundColor="Transparent"/>
 
-        <Entry Placeholder="Enter task"
+        <Entry Placeholder="Tu nombre"
                Grid.Row="1"
                Text="{Binding Text}"/>
 
-        <Button Text="Add"
-                Command="{Binding AddCommand}"
+        <Button Text="Acceder"
+                Command="{Binding TapCommand}"
+                CommandParameter="{Binding Text}"
                 Grid.Row="1"
                 Grid.Column="1"/>
 
-        <CollectionView Grid.Row="2" Grid.ColumnSpan="2"
-                        ItemsSource="{Binding Items}"
-                        SelectionMode="None">
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="{x:Type x:String}">
-                    <SwipeView>
-                        <SwipeView.RightItems>
-                            <SwipeItem Text="Delete"
-                                       BackgroundColor="Red"
-                                       Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}},Path=DeleteCommand}"
-                                       CommandParameter="{Binding .}"/>
-                        </SwipeView.RightItems>
-
-                        <Grid Padding="0,5">
-                            <Frame>
-                                <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer  
-                                       Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}},Path=TapCommand}"
-                                       CommandParameter="{Binding .}"/>
-                                </Frame.GestureRecognizers>
-                                <Label Text="{Binding .}" 
-                                   FontSize="24"/>
-                            </Frame>
-                        </Grid>
-                    </SwipeView>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-
-        </CollectionView>
-
     </Grid>
-    
+
 </ContentPage>
