@@ -17,15 +17,8 @@
                Source="dotnet_bot.png"
                BackgroundColor="Transparent"/>
 
-        <Entry Placeholder="Tu nombre"
-               Grid.Row="1"
-               Text="{Binding Text}"/>
-
         <Button Text="Acceder"
-                Command="{Binding TapCommand}"
-                CommandParameter="{Binding Text}"
-                Grid.Row="1"
-                Grid.Column="1"/>
+                Command="{Binding GoToLoginCommand}"/>
 
     </Grid>
 

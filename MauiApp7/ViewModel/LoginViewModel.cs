@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
-namespace MauiApp7.ViewModel
+namespace MauiApp7.ViewModel;
+
+public partial class LoginViewModel : ObservableObject
 {
-    public class LoginViewModel
+    [ObservableProperty]
+    string text;
+
+    [RelayCommand]
+    async Task Tap(string s)
     {
+        await Shell.Current.GoToAsync($"{nameof(DetailPage)}?Text={s}");
     }
 }

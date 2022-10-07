@@ -14,13 +14,11 @@ public partial class MainViewModel : ObservableObject
 {
     public MainViewModel() { }
 
-    [ObservableProperty]
-    string text;
-
-    [RelayCommand] 
-    async Task Tap(string s)
+    [RelayCommand]
+    async Task GoToLogin()
     {
-        await Shell.Current.GoToAsync( $"{nameof(DetailPage)}?Text={s}");
+        await Shell.Current.GoToAsync(nameof(LoginPage));
     }
+
 
 }
