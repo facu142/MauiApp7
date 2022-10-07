@@ -5,7 +5,6 @@
              
              xmlns:viewmodel="clr-namespace:MauiApp7.ViewModel"
              x:DataType="viewmodel:MainViewModel"
-             
              >
 
     <Grid RowDefinitions="100, Auto, *"
