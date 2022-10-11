@@ -7,11 +7,14 @@
              xmlns:viewmodel="clr-namespace:MauiApp7.ViewModel"
              x:DataType="viewmodel:LoginViewModel"             
              >
-    <VerticalStackLayout>
+    <VerticalStackLayout Padding="20">
+
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Login"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+            FontSize="24"
+            Padding="10"/>
 
         <Entry Placeholder="Tu nombre"
                Grid.Row="1"

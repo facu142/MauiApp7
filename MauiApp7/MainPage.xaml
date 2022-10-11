@@ -7,19 +7,26 @@
              x:DataType="viewmodel:MainViewModel"
              >
 
-    <Grid RowDefinitions="100, Auto, *"
-          ColumnDefinitions=".75*, .25*"
+    <Grid RowDefinitions="100,Auto,Auto"
+          ColumnDefinitions="100*"
           Padding="10"
           RowSpacing="10"
           ColumnSpacing="10">
 
-        <Image Grid.ColumnSpan="2"
+        <Label  Grid.Row="0"
+                Padding="20"
+                Text="Bienvenido al sistema"
+                FontSize="30"
+                HorizontalOptions="Center"/>
+
+        <Image Grid.Row="1"
+               Grid.ColumnSpan="2"
                Source="dotnet_bot.png"
                BackgroundColor="Transparent"/>
 
-        <Button Text="Acceder"
+        <Button Grid.Row="2"
+                Text="Acceder"
                 Command="{Binding GoToLoginCommand}"/>
-
     </Grid>
 
 </ContentPage>
